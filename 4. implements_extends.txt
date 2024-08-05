@@ -1,0 +1,70 @@
+In Dart (and by extension, Flutter), `implements` and `extends` are used for two different purposes when working with classes and inheritance. Here’s a breakdown of their differences:
+
+### `extends`
+- **Purpose:** `extends` is used to create a subclass that inherits from a parent (or base) class.
+- **Inheritance:** When you use `extends`, the subclass inherits all the properties and methods of the parent class. The subclass can use, override, or extend these inherited features.
+- **Single Inheritance:** Dart supports single inheritance, meaning a class can only extend one other class.
+- **Base Class Methods:** The subclass can call methods from the base class using `super`.
+
+**Example:**
+```dart
+class Animal {
+  void eat() {
+    print('Animal is eating');
+  }
+}
+
+class Dog extends Animal {
+  void bark() {
+    print('Dog is barking');
+  }
+  
+  // Overriding a method
+  @override
+  void eat() {
+    print('Dog is eating');
+  }
+}
+
+void main() {
+  Dog dog = Dog();
+  dog.eat(); // Dog is eating
+  dog.bark(); // Dog is barking
+}
+```
+
+### `implements`
+- **Purpose:** `implements` is used to create a class that must provide concrete implementations for all the methods and properties defined in an interface (another class or abstract class).
+- **Interface Implementation:** When a class implements another class, it doesn't inherit its properties and methods directly. Instead, it must provide its own implementations for all methods and properties specified by the interface.
+- **Multiple Interfaces:** Dart allows a class to implement multiple interfaces, which can be useful for combining behaviors from different sources.
+- **No Inheritance:** The implementing class doesn’t inherit the actual code; it just agrees to provide its own version of the interface's methods and properties.
+
+**Example:**
+```dart
+class Animal {
+  void eat() => print('Animal is eating');
+}
+
+class Dog implements Animal {
+  @override
+  void eat() {
+    print('Dog is eating');
+  }
+
+  void bark() {
+    print('Dog is barking');
+  }
+}
+
+void main() {
+  Dog dog = Dog();
+  dog.eat(); // Dog is eating
+  dog.bark(); // Dog is barking
+}
+```
+
+### Key Differences:
+- **Inheritance (`extends`):** The subclass automatically inherits the behavior of the parent class and can override or extend it.
+- **Interface Implementation (`implements`):** The implementing class must manually provide implementations for all the methods and properties of the interface, and it doesn't inherit any behavior.
+
+In summary, use `extends` when you want to inherit and potentially override or extend functionality from a base class, and use `implements` when you want to create a class that adheres to a contract (interface) defined by another class or abstract class, without inheriting its implementation.

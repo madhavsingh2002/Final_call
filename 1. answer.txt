@@ -1,0 +1,72 @@
+In Flutter, Clean Architecture is a software design principle that organizes code into distinct layers, 
+each with a clear responsibility, to improve the maintainability, scalability, and testability of the application. 
+The core idea is to separate concerns so that the business logic is independent of frameworks, UI, and external data sources.
+
+### Layers in Clean Architecture:
+
+1.  Presentation Layer: 
+   -  Components:  Flutter UI (Widgets), ViewModels, or Presenters.
+   -  Responsibility:  This layer is responsible for displaying data to the user and handling user inputs. 
+   It interacts with the Use Cases (or Interactors) to retrieve data and perform actions.
+
+2.  Domain Layer: 
+   -  Components:  Entities, Use Cases (Interactors), and Repositories (Interfaces).
+   -  Responsibility:  This is the core layer where the business logic resides. 
+        Use Cases define the specific application tasks, 
+        while Entities represent the core business models. 
+        Repositories are interfaces that provide a way to fetch data, regardless of where the data comes from.
+
+3.  Data Layer: 
+   -  Components:  Data sources (API clients, databases), Repository implementations, and mappers.
+   -  Responsibility:  This layer handles data retrieval and storage. It implements the repository interfaces from the domain layer and interacts with external systems (e.g., APIs, databases). Mappers can be used to convert raw data into domain models.
+
+4.  Infrastructure Layer (Optional): 
+   -  Components:  Platform-specific implementations, third-party services.
+   -  Responsibility:  This layer might include platform-specific code, like accessing device sensors, local storage, or other platform services.
+
+How It Works in Flutter:
+
+-  UI Widgets  in the presentation layer interact with *ViewModels** (or Presenters), which communicate with **Use Cases** in the domain layer.
+-  Use Cases  use  Repositories  to fetch or store data. Repositories are implemented in the data layer and use data sources to interact with external systems like APIs or databases.
+- The architecture ensures that the business logic is isolated and can be easily tested without depending on Flutter's framework or external data sources.
+
+Benefits:
+
+- Separation of Concerns: Each layer has a distinct responsibility, reducing code coupling and making the application easier to maintain.
+- Testability: Business logic can be tested independently of UI or data sources.
+- Scalability: The architecture allows for easy extension of features and refactoring.
+
+Clean Architecture in Flutter can be implemented using popular patterns like BLoC (Business Logic Component), 
+Provider, or Riverpod, depending on the project's needs.
+
+lib/
+│
+├── data/
+│   ├── models/
+│   │   └── todo_model.dart
+│   ├── repositories/
+│   │   └── todo_repository_impl.dart
+│   └── data_sources/
+│       └── firebase_todo_data_source.dart
+│
+├── domain/
+│   ├── entities/
+│   │   └── todo.dart
+│   ├── repositories/
+│   │   └── todo_repository.dart
+│   └── usecases/
+│       └── get_todos.dart
+│       └── add_todo.dart
+│       └── delete_todo.dart
+│
+├── presentation/
+│   ├── bloc/
+│   │   └── todo_bloc.dart
+│   │   └── todo_event.dart
+│   │   └── todo_state.dart
+│   ├── pages/
+│   │   └── todo_page.dart
+│   └── widgets/
+│       └── todo_item.dart
+│
+└── main.dart

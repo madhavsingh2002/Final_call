@@ -1,0 +1,5 @@
+1. what is the clean Architecture.
+2. What is the MVC Architecture.
+3. What is the factory Constructor.
+4. Difference between the Implements and Extends.
+5. What is the Extends and implements.
