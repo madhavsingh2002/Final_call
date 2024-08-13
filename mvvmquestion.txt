@@ -1,0 +1,31 @@
+Here are 10 questions and answers about Flutter's MVVM (Model-View-ViewModel) architecture:
+
+### 1. **What is MVVM?**
+MVVM stands for Model-View-ViewModel, an architecture pattern that separates the UI (View) from the business logic (ViewModel) and data (Model), promoting better code organization and testability.
+
+### 2. **What is the role of the Model in MVVM?**
+The Model represents the data and business logic. It handles data fetching, storage, and updates, providing the ViewModel with data it can format and present to the View.
+
+### 3. **What is the role of the View in MVVM?**
+The View is the UI layer that displays data to the user. It is stateless and relies on the ViewModel for data and user interaction handling.
+
+### 4. **What is the role of the ViewModel in MVVM?**
+The ViewModel acts as an intermediary between the Model and View. It retrieves data from the Model, formats it for the View, and handles user interactions.
+
+### 5. **How does the View interact with the ViewModel in MVVM?**
+The View observes the ViewModel, typically using a state management solution like `Provider` or `GetX`, to react to changes in data and update the UI accordingly.
+
+### 6. **How is data passed from ViewModel to View?**
+Data is passed from the ViewModel to the View using observable properties, which notify the View of any changes, triggering UI updates.
+
+### 7. **Why is MVVM beneficial in Flutter?**
+MVVM helps in separating concerns, making the codebase more manageable and testable. It also allows for independent development of UI and business logic.
+
+### 8. **Which state management tools are commonly used with MVVM in Flutter?**
+Common state management tools used with MVVM in Flutter include `Provider`, `GetX`, `Riverpod`, and `Bloc`, which help manage the ViewModel's state and notify the View of changes.
+
+### 9. **How do you handle user interactions in MVVM?**
+In MVVM, user interactions are handled by the ViewModel. The ViewModel updates the Model, processes business logic, and updates the View accordingly.
+
+### 10. **How do you test an MVVM architecture in Flutter?**
+Testing in MVVM involves writing unit tests for the ViewModel, ensuring that it correctly handles business logic and data formatting, and UI tests to verify the View's response to state changes in the ViewModel.

@@ -2,7 +2,7 @@ In Flutter, Clean Architecture is a software design principle that organizes cod
 each with a clear responsibility, to improve the maintainability, scalability, and testability of the application. 
 The core idea is to separate concerns so that the business logic is independent of frameworks, UI, and external data sources.
 
-### Layers in Clean Architecture:
+Layers in Clean Architecture:
 
 1.  Presentation Layer: 
    -  Components:  Flutter UI (Widgets), ViewModels, or Presenters.

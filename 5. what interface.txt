@@ -1,0 +1,41 @@
+An interface in programming is a way to define a contract that a class must follow. 
+It specifies a set of methods and properties that a class needs to implement, 
+but it doesn’t provide the actual code for these methods. 
+The class that implements the interface provides the specific details on how the methods should work.
+
+In Dart, every class can act as an interface. When you use the `implements` keyword, 
+you're telling the class to provide its own implementation for the methods and properties defined by the interface.
+
+### Simple Example:
+
+```dart
+// Interface (can be any class)
+class Vehicle {
+  void start();
+  void stop();
+}
+
+// Implementing the interface
+class Car implements Vehicle {
+  @override
+  void start() {
+    print('Car is starting');
+  }
+
+  @override
+  void stop() {
+    print('Car is stopping');
+  }
+}
+
+void main() {
+  Car myCar = Car();
+  myCar.start(); // Car is starting
+  myCar.stop();  // Car is stopping
+}
+```
+
+### Summary:
+- **Interface:** Defines a set of methods and properties.
+- **Implementation:** The class that implements the interface provides the specific details for those methods and properties.
+- **Purpose:** To ensure that different classes follow the same method signatures, allowing for consistency and interoperability.

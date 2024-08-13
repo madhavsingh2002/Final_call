@@ -1,0 +1,41 @@
+Here are 10 questions and answers about Flutter's MVC (Model-View-Controller) architecture:
+
+### 1. **What is MVC?**
+MVC stands for Model-View-Controller, an architecture pattern that separates the application into three main components: 
+the Model (data), the View (UI), and the Controller (logic).
+
+### 2. **What is the role of the Model in MVC?**
+The Model represents the data and business logic of the application.
+It is responsible for managing the data, including retrieving, storing, and updating it.
+
+### 3. **What is the role of the View in MVC?**
+The View is responsible for displaying the data provided by the Model. 
+It defines the UI and how the user sees and interacts with the application.
+
+### 4. **What is the role of the Controller in MVC?**
+The Controller acts as an intermediary between the Model and View. 
+It handles user input, updates the Model, and determines which View to display based on the data.
+
+### 5. **How does the View interact with the Controller in MVC?**
+The View sends user interactions (like button clicks) to the Controller. 
+The Controller processes these inputs, updates the Model if necessary, and then updates the View.
+
+### 6. **How is data passed from Model to View in MVC?**
+Data is passed from the Model to the View through the Controller. 
+The Controller fetches data from the Model and provides it to the View for display.
+
+### 7. **Why is MVC beneficial in Flutter?**
+MVC helps in organizing code by separating concerns, making it easier to manage complex applications, 
+and allowing independent development and testing of the Model, View, and Controller.
+
+### 8. **How do you handle user interactions in MVC?**
+User interactions are handled by the Controller. The Controller processes the input, updates the Model, and 
+refreshes the View to reflect any changes.
+
+### 9. **Which part of the MVC architecture is responsible for business logic?**
+The business logic in MVC is typically handled by the Model, while the Controller may contain some logic related to handling user 
+input and updating the View.
+
+### 10. **How do you test an MVC architecture in Flutter?**
+Testing in MVC involves writing unit tests for the Model (business logic), integration tests for the Controller (input handling), 
+and UI tests for the View to ensure it displays data correctly.

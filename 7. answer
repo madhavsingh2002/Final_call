@@ -1,0 +1,7 @@
+A set of IDs for Widgets, Elements and SemanticsNodes make up the key class. 
+Keys are responsible for preserving the state of widgets when they are updated inside the widget tree. 
+Keys may also be used to modify and rearrange collections of widgets of the same type and defined states.
+
+Otherwise, keys may be superfluous to the code, even if they aren't harmful in any manner. 
+Keys are useful when you need to edit a widget tree with stateful widgets, 
+but not when the tree is entirely made up of stateless widgets.
